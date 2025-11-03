@@ -1,26 +1,9 @@
-```
+Дерево компонент:
+https://drive.google.com/file/d/1k47fC3de31Aqeqap_XKmqXZ8wOkFju-t/view?usp=sharing
 
-├── ContactForm (Presentational)
-|    │    ↓ {addContact}
-|    └── Форма введення
-|        ↑ onSubmit → addContact(data)
-|
-├── SearchBar (Presentational)
-|    │    ↓ {searchTerm}, {setSearchTerm}
-|    └── Поле пошуку
-|        ↑ onChange → setSearchTerm(text)
-|
-|
-└── ContactTable (Container/Presenter)
-        │    ↓ {contacts} (відфільтрований список), {onEditContact}
-        │
-        └──
-            │
-            └── TableRow (Presentational)
-                │    ↓ {contact}, {onEditContact}
-                ├── [Text/Edit Input] (Внутрішній стан isEditing)
-                │    ↑ onChange → Оновлює локальні дані
-                └── [Buttons: Редагувати, Зберегти]
-                      ↑ onClick (Редагувати) → setIsEditing(true)
-                      ↑ onClick (Зберегти) → onEditContact(id, updatedData)
-```
+опис:
+App — головний компонент, що керує станом і передає дані дочірнім.
+BookForm — форма для додавання нового контакту.
+SearchBar — поле для пошуку.
+BookTable — таблиця, що показує дані.
+TableRow — один рядок таблиці з можливістю редагування.
